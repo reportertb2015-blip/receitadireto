@@ -1,7 +1,7 @@
 ---
-publishDate: 2026-05-13
-title: "Cha de Hortela com Gengibre: Cura Natureza"
-excerpt: "Aprenda a fazer o poderoso cha de hortela com gengibre para digestao."
+pubDate: 2026-05-13
+title: "Chá de Hortelã com Gengibre: Cura Natureza"
+description: "Aprenda a fazer o poderoso chá de hortelã com gengibre para digestão e imunidade."
 image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd"
 category: Saude
 tags:
