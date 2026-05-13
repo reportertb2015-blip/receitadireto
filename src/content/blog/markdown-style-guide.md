@@ -1,214 +1,170 @@
 ---
-title: "Markdown Style Guide"
-description: "Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro."
-pubDate: "Jun 19 2024"
-heroImage: "/blog-placeholder-1.jpg"
+import Layout from '~/layouts/PageLayout.astro';
+
+import Header from '~/components/widgets/Header.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Content from '~/components/widgets/Content.astro';
+
+import { headerData } from '~/navigation';
+import FAQs from '~/components/widgets/FAQs.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+
+const metadata = {
+  title: 'Receita Grátis - Saúde e Culinária Natural',
+};
 ---
 
-Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.
-
-## Headings
-
-The following HTML `<h1>`—`<h6>` elements represent six levels of section headings. `<h1>` is the highest section level while `<h6>` is the lowest.
-
-# H1
-
-## H2
-
-### H3
-
-#### H4
-
-##### H5
-
-###### H6
-
-## Paragraph
-
-Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.
-
-Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.
-
-## Images
-
-### Syntax
-
-```markdown
-![Alt text](./full/or/relative/path/of/image)
-```
-
-### Output
-
-![blog placeholder](/blog-placeholder-about.jpg)
-
-## Blockquotes
-
-The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a `footer` or `cite` element, and optionally with in-line changes such as annotations and abbreviations.
-
-### Blockquote without attribution
-
-#### Syntax
-
-```markdown
-> Tiam, ad mint andaepu dandae nostion secatur sequo quae.  
-> **Note** that you can use _Markdown syntax_ within a blockquote.
-```
-
-#### Output
-
-> Tiam, ad mint andaepu dandae nostion secatur sequo quae.  
-> **Note** that you can use _Markdown syntax_ within a blockquote.
-
-### Blockquote with attribution
-
-#### Syntax
-
-```markdown
-> Don't communicate by sharing memory, share memory by communicating.<br>
-> — <cite>Rob Pike[^1]</cite>
-```
-
-#### Output
-
-> Don't communicate by sharing memory, share memory by communicating.<br>
-> — <cite>Rob Pike[^1]</cite>
-
-[^1]: The above quote is excerpted from Rob Pike's [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
-
-## Tables
-
-### Syntax
-
-```markdown
-| Italics   | Bold     | Code   |
-| --------- | -------- | ------ |
-| _italics_ | **bold** | `code` |
-```
-
-### Output
-
-| Italics   | Bold     | Code   |
-| --------- | -------- | ------ |
-| _italics_ | **bold** | `code` |
-
-## Code Blocks
-
-### Syntax
-
-we can use 3 backticks ``` in new line and write snippet and close with 3 backticks on new line and to highlight language specific syntax, write one word of language name after first 3 backticks, for eg. html, javascript, css, markdown, typescript, txt, bash
-
-````markdown
-```html
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<title>Example HTML5 Document</title>
-	</head>
-	<body>
-		<p>Test</p>
-	</body>
-</html>
-```
-````
-
-### Output
-
-```html
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<title>Example HTML5 Document</title>
-	</head>
-	<body>
-		<p>Test</p>
-	</body>
-</html>
-```
-
-## List Types
-
-### Ordered List
-
-#### Syntax
-
-```markdown
-1. First item
-2. Second item
-3. Third item
-```
-
-#### Output
-
-1. First item
-2. Second item
-3. Third item
-
-### Unordered List
-
-#### Syntax
-
-```markdown
-- List item
-- Another item
-- And another item
-```
-
-#### Output
-
-- List item
-- Another item
-- And another item
-
-### Nested list
-
-#### Syntax
-
-```markdown
-- Fruit
-  - Apple
-  - Orange
-  - Banana
-- Dairy
-  - Milk
-  - Cheese
-```
-
-#### Output
-
-- Fruit
-  - Apple
-  - Orange
-  - Banana
-- Dairy
-  - Milk
-  - Cheese
-
-## Other Elements — abbr, sub, sup, kbd, mark
-
-### Syntax
-
-```markdown
-<abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
-
-H<sub>2</sub>O
-
-X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
-
-Press <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>Delete</kbd> to end the session.
-
-Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
-```
-
-### Output
-
-<abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
-
-H<sub>2</sub>O
-
-X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
-
-Press <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>Delete</kbd> to end the session.
-
-Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
+<Layout metadata={metadata}>
+  <Fragment slot="header">
+    <Header
+      {...headerData}
+      actions={[
+        {
+          variant: 'primary',
+          text: 'Ver Receitas',
+          href: '#blog',
+        },
+      ]}
+      isSticky
+    />
+  </Fragment>
+
+  <!-- Hero Principal: Foco na Série Cura Natureza -->
+
+  <Hero2
+    tagline="Portal Receita Grátis"
+    actions={[
+      { variant: 'primary', text: 'Começar Agora', href: '#blog' },
+      { text: 'Saber Mais', href: '#features' },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Alimentos Saudáveis e Naturais',
+    }}
+  >
+    <Fragment slot="title">
+      Transforme sua saúde com a <br /> série <span class="text-accent dark:text-white">Cura Natureza</span><br />
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Descubra o poder dos alimentos funcionais e receitas práticas que nutrem o corpo e a alma. 
+      Liderado por <span class="font-semibold">Anderson Kochanski</span>, o portal combina tradição e bem-estar.
+    </Fragment>
+  </Hero2>
+
+  <!-- Diferenciais do Portal -->
+
+  <Features
+    id="features"
+    title="Por que seguir o Receita Grátis?"
+    subtitle="Unimos praticidade na cozinha com os segredos da medicina natural."
+    columns={2}
+    items={[
+      {
+        title: 'Série Cura Natureza',
+        description:
+          'Conteúdos exclusivos sobre como utilizar ervas, raízes e alimentos integrais como aliados da sua saúde.',
+        icon: 'tabler:leaf',
+      },
+      {
+        title: 'Mais de 15 mil Receitas',
+        description: `Um acervo completo que vai do café da manhã ao jantar, sempre focando em ingredientes acessíveis.`,
+        icon: 'tabler:ToolsKitchen2',
+      },
+      {
+        title: 'Foco em Bem-estar',
+        description:
+          'Não é apenas sobre comer, é sobre viver melhor. Dicas de hábitos saudáveis para toda a família.',
+        icon: 'tabler:heart-plus',
+      },
+      {
+        title: 'Leitura Rápida e Limpa',
+        description: `Portal otimizado para carregar instantaneamente no seu celular, facilitando a consulta enquanto você cozinha.`,
+        icon: 'tabler:device-mobile',
+      },
+    ]}
+  />
+
+  <!-- Seção de Conteúdo: Exemplos de Uso (Receitas e Saúde) -->
+
+  <Content
+    title="O que você encontrará aqui"
+    subtitle="Explore as diferentes vertentes do nosso portal focado em uma vida mais plena."
+    isReversed
+    items={[
+      {
+        title: 'Alimentação como Remédio:',
+        description:
+          'Entenda como ingredientes simples do seu dia a dia podem ajudar a prevenir doenças e aumentar sua imunidade através da série Cura Natureza.',
+      },
+      {
+        title: 'Benefícios:',
+        description: `Receitas testadas e aprovadas. <br /> Guia de substituições saudáveis. <br /> Explicações claras sobre os benefícios de cada alimento.`,
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?ixlib=rb-4.0.3&auto=format&fit=crop&w=1671&q=80',
+      alt: 'Salada Saudável',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Cozinha Funcional: <br /><span class="text-2xl">Saúde no seu prato</span>
+      </h3>
+    </Fragment>
+  </Content>
+
+  <!-- FAQs do Portal -->
+
+  <FAQs
+    title="Dúvidas Frequentes"
+    items={[
+      {
+        title: 'As receitas são realmente gratuitas?',
+        description:
+          'Sim! Todo o conteúdo do portal Receita Grátis é aberto ao público, financiado através de nossos parceiros e anúncios não invasivos.',
+        icon: 'tabler:chevrons-right',
+      },
+      {
+        title: 'O conteúdo da série Cura Natureza tem base técnica?',
+        description: `Sim, Anderson Kochanski preza pela curadoria de informações baseadas em conhecimentos tradicionais e estudos sobre alimentos funcionais.`,
+        icon: 'tabler:chevrons-right',
+      },
+      {
+        title: 'Posso sugerir uma receita ou tema?',
+        description:
+          'Com certeza! Adoramos ouvir nossos leitores. Você pode entrar em contato conosco através de nossas redes sociais ou e-mail.',
+        icon: 'tabler:chevrons-right',
+      },
+    ]}
+  />
+
+  <!-- Contato/Redes Sociais -->
+
+  <Steps2
+    title="Acompanhe nossas novidades"
+    subtitle="Fique por dentro de cada nova receita e capítulo da série Cura Natureza."
+    items={[
+      {
+        title: 'Siga-nos',
+        description: '@receitagratis',
+        icon: 'tabler:brand-instagram',
+      },
+      {
+        title: 'Localização',
+        description: 'Telêmaco Borba, PR',
+        icon: 'tabler:map-pin',
+      },
+    ]}
+  />
+
+  <!-- Últimas Postagens do Blog (Receitas) -->
+
+  <BlogLatestPosts
+    id="blog"
+    title="Últimas Receitas e Dicas de Saúde"
+    information={`Explore nosso blog para encontrar as receitas mais recentes e guias detalhados sobre saúde natural.`}
+  />
+</Layout>
